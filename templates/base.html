@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+
+    <title>Cookbook</title>
+</head>
+
+<body class="container-fluid">
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="{{url_for('index')}}" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
+                <li><a href="{{url_for('dinner')}}">Dinner</a></li>
+                <li><a href="{{url_for('dessert')}}">Dessert</a></li>
+                <li><a href="{{url_for('login')}}">Login</a></li>
+                <li><a href="{{url_for('register')}}">Register</a></li>
+            </ul>
+        </div>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
+            <li><a href="{{url_for('dinner')}}">Dinner</a></li>
+            <li><a href="{{url_for('dessert')}}">Dessert</a></li>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('register')}}">Register</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="container title-image">
+        {% block titleimage %}{% endblock %}
+    </div>
+    
+    <div class="container-fluid">
+        <main>{% block content %}{% endblock %}</main>
+    </div>
+    
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                      <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                      <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright Daniel Matias
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            $('.parallax').parallax();
+            $('.carousel').carousel();
+          });
+    </script>    
+    
+</body>
+</html>

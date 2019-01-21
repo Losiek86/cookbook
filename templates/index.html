@@ -1,0 +1,27 @@
+{% extends 'base.html'%} 
+{% block titleimage %}
+{% endblock %}
+{% block content %}
+<div class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='image/chef.png') }}"></img></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h2 class="header">Your cooking ideas :)</h2>
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="{{ url_for('static', filename='image/one.jpg') }}"></a>
+            <a class="carousel-item" href="#two!"><img src="{{ url_for('static', filename='image/two.jpg') }}"></a>
+            <a class="carousel-item" href="#three!"><img src="{{ url_for('static', filename='image/three.jpg') }}"></a>
+            <a class="carousel-item" href="#four!"><img src="{{ url_for('static', filename='image/four.jpg') }}"></a>
+            <a class="carousel-item" href="#five!"><img src="{{ url_for('static', filename='image/five.jpg') }}"></a>
+            <a class="carousel-item" href="#six!"><img src="{{ url_for('static', filename='image/six.jpg') }}"></a>
+            <a class="carousel-item" href="#seven!"><img src="{{ url_for('static', filename='image/seven.jpg') }}"></a>
+            <a class="carousel-item" href="#eight!"><img src="{{ url_for('static', filename='image/eight.jpg') }}"></a>
+          </div>
+        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='image/tapas.jpg') }}"></img></div>
+</div>
+{% endblock %}

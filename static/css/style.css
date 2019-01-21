@@ -1,0 +1,34 @@
+body {
+    background-color: #b778ff;
+}
+
+nav {
+    background-color: #380f67;
+}
+
+/* parallax styles */
+.grey-text.text-darken-3 {
+    color: white !important;
+    text-align: center;
+}
+
+.white {
+    background-color: #380f67 !important;
+    color: white;
+    text-align: center;
+}
+
+/* end of style */
+
+.sidenav {
+    background-color: #b778ff;
+    color: white;
+}
+
+.page-footer {
+    background-color: #380f67;
+}
+
+.title-image {
+    text-align: center;
+}
