@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Monoton" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
 
     <title>Cookbook</title>
@@ -15,7 +17,7 @@
 <body class="container-fluid">
     <nav>
         <div class="nav-wrapper container">
-            <a href="{{url_for('index')}}" class="brand-logo">Logo</a>
+            <a href="{{url_for('index')}}" class="brand-logo">Cooking Ideas</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
@@ -79,6 +81,7 @@
             $('.sidenav').sidenav();
             $('.parallax').parallax();
             $('.carousel').carousel();
+            $('.slider').slider();
           });
     </script>    
     

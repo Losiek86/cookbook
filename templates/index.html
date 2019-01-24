@@ -3,11 +3,12 @@
 {% endblock %}
 {% block content %}
 <div class="parallax-container">
-    <div class="parallax"><img src="{{ url_for('static', filename='image/chef.png') }}"></img></div>
+    <div class="parallax"><img src="{{ url_for('static', filename='image/chef.jpg') }}"></img></div>
 </div>
 <div class="section white">
     <div class="row container">
-        <h2 class="header">Your cooking ideas :)</h2>
+        <h1 class="header">Cooking Ideas</h1>
+        <h3>Your nr 1 cooking ideas page</h3>
         <div class="carousel">
             <a class="carousel-item" href="#one!"><img src="{{ url_for('static', filename='image/one.jpg') }}"></a>
             <a class="carousel-item" href="#two!"><img src="{{ url_for('static', filename='image/two.jpg') }}"></a>
@@ -18,7 +19,9 @@
             <a class="carousel-item" href="#seven!"><img src="{{ url_for('static', filename='image/seven.jpg') }}"></a>
             <a class="carousel-item" href="#eight!"><img src="{{ url_for('static', filename='image/eight.jpg') }}"></a>
           </div>
-        <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+        <p class="grey-text text-darken-3 lighten-3">Welcome to Cooking Ideas!<br>A place where You can find superb recipes for each part of a day.<br>
+                                                    If you are happy with Your experience on site we highly recommend to put Your ideas here as well.<br>
+                                                    Simply <a href="{{url_for('login')}}">Login</a> or <a href="{{url_for('register')}}">Register</a> to place Your recipe.</p>
     </div>
 </div>
 <div class="parallax-container">

@@ -6,6 +6,24 @@ nav {
     background-color: #380f67;
 }
 
+.brand-logo {
+    font-family: 'Monoton', cursive;
+}
+
+h1 {
+    font-family: 'Aclonica', sans-serif;
+}
+
+main {
+    min-height: 50vh;
+}
+
+/* Caption styles */
+
+.caption {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 /* parallax styles */
 .grey-text.text-darken-3 {
     color: white !important;
@@ -20,6 +38,29 @@ nav {
 
 /* end of style */
 
+/* carousel style */
+
+.carousel {
+    height: 250px;
+}
+
+/* end of styles */
+
+.input-field label {
+    color: black;
+}
+
+.input-field input[type=text],
+.input-field input[type=password],
+.input-field input[type=email]{
+    border-bottom: 1px solid black;
+    box-shadow: 0 1px 0 0 black;
+}
+
+label.active {
+    color: yellow !important;
+}
+
 .sidenav {
     background-color: #b778ff;
     color: white;
@@ -31,4 +72,12 @@ nav {
 
 .title-image {
     text-align: center;
+}
+
+/* MEDIA STYLE */
+
+@media (max-width: 768px) {
+    nav .brand-logo {
+        font-size: 1rem;
+    }
 }
