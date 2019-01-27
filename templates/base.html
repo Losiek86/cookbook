@@ -23,8 +23,13 @@
                 <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
                 <li><a href="{{url_for('dinner')}}">Dinner</a></li>
                 <li><a href="{{url_for('dessert')}}">Dessert</a></li>
+                {% if not session.username %}
                 <li><a href="{{url_for('login')}}">Login</a></li>
                 <li><a href="{{url_for('register')}}">Register</a></li>
+                {% else %}
+                <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+                {% endif %}
             </ul>
         </div>
         <ul class="sidenav" id="mobile-demo">
@@ -37,7 +42,7 @@
     </nav>
 
     
-    <div class="container title-image">
+    <div class="container-fluid title-image">
         {% block titleimage %}{% endblock %}
     </div>
     

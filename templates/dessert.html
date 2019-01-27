@@ -34,5 +34,26 @@
 </div>
 {% endblock %}
 {% block content %}
-<h1>alle</h1>
+<div class="container-fluid back">
+    <div class="container">
+        <div class="row meals">
+            {% for meal in meals %}
+            {% if meal.category_name == "Dessert" %}
+            <div class="col s12 m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="{{ meal.image }}">
+                        <span class="card-title"><strong>{{ meal.dish_name }}</strong></span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{ meal.short_describe }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

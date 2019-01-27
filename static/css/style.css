@@ -18,6 +18,24 @@ main {
     min-height: 50vh;
 }
 
+.back {
+    background-image: url(../image/background.jpg);
+}
+
+form {
+    margin-top: 50px;
+}
+
+.meals {
+    padding-top: 50px;
+}
+
+span.card-title {
+    background-color: #d68d057a;
+    width: 100%;
+    padding: 10px !important;
+}
+
 /* Caption styles */
 
 .caption {
