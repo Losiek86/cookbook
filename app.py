@@ -63,7 +63,14 @@ def register():
     
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('add_recipe.html')
+    return render_template('add_recipe.html',
+                            categories=mongo.db.categories.find())
+                            
+@app.route('/insert_recipe', methods=['POST'])
+def insert_recipe():
+    meals =  mongo.db.meals
+    meals.insert_one(request.form.to_dict())
+    return redirect(url_for('index'))
     
 @app.route('/logout')
 def logout():

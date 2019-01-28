@@ -5,34 +5,143 @@
         <li>
             <img src="{{ url_for('static', filename='image/dinner/1.jpg') }}">
             <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <h3>Oscar Wilde :</h3>
+                <h5 class="light grey-text text-lighten-3">"After a good dinner one can forgive anybody, even one's own relations."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/breakfast/2.jpg') }}"> 
+            <div class="caption left-align">
+                <h3>Bruce Barton :</h3>
+                <h5 class="light grey-text text-lighten-3">"Not eating breakfast is the worst thing you can do, that’s really the take-home message for teenage girls."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/dessert/1.jpg') }}">
+            <div class="caption center-align">
+                <h3>Unknown :</h3>
+                <h5 class="light grey-text text-lighten-3">"A good cake fixes everything!"</h5>
             </div>
         </li>
         <li>
             <img src="{{ url_for('static', filename='image/dinner/2.jpg') }}">
             <div class="caption left-align">
-                <h3>Left Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <h3>Julia Child :</h3>
+                <h5 class="light grey-text text-lighten-3">"The dinner hour is a sacred, happy time when everyone should be together and relaxed."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/breakfast/3.jpg') }}"> 
+            <div class="caption right-align">
+                <h3>Robert A. Heinlein :</h3>
+                <h5 class="light grey-text text-lighten-3">"One should not attend even the end of the world without a good breakfast."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/dessert/2.jpg') }}">
+            <div class="caption left-align">
+                <h3>Chocolate monster :</h3>
+                <h5 class="light grey-text text-lighten-3">"All You need is love or more Chocolate!"</h5>
             </div>
         </li>
         <li>
             <img src="{{ url_for('static', filename='image/dinner/3.jpg') }}">
             <div class="caption right-align">
-                <h3>Right Aligned Caption</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <h3>Kris Carr :</h3>
+                <h5 class="light grey-text text-lighten-3">"Dinner is where the magic happens in the kitchen."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/breakfast/4.jpg') }}">
+            <div class="caption left-align">
+                <h3>John Gunther :</h3>
+                <h5 class="light grey-text text-lighten-3">"All happiness depends on a leisurely breakfast."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/dessert/3.jpg') }}">
+            <div class="caption right-align">
+                <h3>Bakery client :</h3>
+                <h5 class="light grey-text text-lighten-3">"Nothing brings people together like a good dessert"</h5>
             </div>
         </li>
         <li>
             <img src="{{ url_for('static', filename='image/dinner/4.jpg') }}">
             <div class="caption center-align">
-                <h3>This is our big Tagline!</h3>
-                <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                <h3>Laurie David :</h3>
+                <h5 class="light grey-text text-lighten-3">"A great dinner must include not only yummy food, but good conversation."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/breakfast/1.jpg') }}">
+            <div class="caption right-align">
+                <h3>Unknown :</h3>
+                <h5 class="light grey-text text-lighten-3">"I don’t care how late it is. When I wake up, I’m getting breakfast."</h5>
+            </div>
+        </li>
+        <li>
+            <img src="{{ url_for('static', filename='image/dessert/4.jpg') }}">
+            <div class="caption center-align">
+                <h3>Somebody :</h3>
+                <h5 class="light grey-text text-lighten-3">"Count the memories not calories"</h5>
             </div>
         </li>
     </ul>
 </div>
 {% endblock %}
 {% block content %}
-
+<div class="container">
+    <h3>Add Recipe</h3>
+    <div class="row">
+        <form action="{{url_for('insert_recipe')}}" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">poll</i>
+                    <select id="category" name="category_name">
+                        <option value="" disabled selected>Choose Category</option>
+                        {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label>Recipe Category</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <input id="dish_name" name="dish_name" type="text" class="validate">
+                    <label for="icon_prefix">Meal Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">subject</i>
+                    <textarea name="dish_description" id="dish_description" class="materialize-textarea"></textarea>
+                    <label for="icon_telephone">Meal Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">subject</i>
+                    <textarea name="short_describe" id="short_describe" class="materialize-textarea"></textarea>
+                    <label for="icon_telephone">Meal Short Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="switch">
+                    <label>
+                        <input id="is_vegan" name="is_vegan" type="checkbox">
+                        <span class="lever"></span>
+                        Is Vegan
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
+                    <i class="material-icons right">playlist_add</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

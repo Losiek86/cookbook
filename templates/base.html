@@ -16,10 +16,13 @@
 
 <body class="container-fluid">
     <nav>
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper">
             <a href="{{url_for('index')}}" class="brand-logo">Cooking Ideas</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
+                {% if session.username %}
+                <li>Hello, {{ session.username }}!</li>
+                {% endif %}
                 <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
                 <li><a href="{{url_for('dinner')}}">Dinner</a></li>
                 <li><a href="{{url_for('dessert')}}">Dessert</a></li>
@@ -33,11 +36,19 @@
             </ul>
         </div>
         <ul class="sidenav" id="mobile-demo">
+            {% if session.username %}
+            <li>Hello, {{ session.username }}!</li>
+            {% endif %}
             <li><a href="{{url_for('breakfast')}}">Breakfast</a></li>
             <li><a href="{{url_for('dinner')}}">Dinner</a></li>
             <li><a href="{{url_for('dessert')}}">Dessert</a></li>
+            {% if not session.username %}
             <li><a href="{{url_for('login')}}">Login</a></li>
             <li><a href="{{url_for('register')}}">Register</a></li>
+            {% else %}
+            <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+            <li><a href="{{url_for('logout')}}">Logout</a></li>
+            {% endif %}
         </ul>
     </nav>
 
@@ -87,6 +98,7 @@
             $('.parallax').parallax();
             $('.carousel').carousel();
             $('.slider').slider();
+            $('select').formSelect();
           });
     </script>    
     
