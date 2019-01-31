@@ -1,0 +1,81 @@
+{% extends 'base.html'%} 
+{% block titleimage %}
+<div class="col s12">
+    <div class="icon-block">
+        <h2 class="orange-text text-lighten-3 art-deco-font">{{meal.dish_name}}</h2>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+            <img class="responsive-img" src="{{meal.image}}">
+        </div>
+        <div class="col s12 m6">
+            <p class="description">{{meal.dish_description}}</p>
+        </div>
+    </div>
+</div>
+<div class="container row">
+    <div class="col s12 m4">
+        <h5>Igredients :</h5>
+        <ol>
+            {% if meal.ingredient_one %}
+                <li>{{meal.ingredient_one}}</li>
+            {% endif %}
+            
+            {% if meal.ingredient_two %}
+                <li>{{meal.ingredient_two}}</li>
+            {% endif %}
+            
+            {% if meal.ingredient_three %}
+                <li>{{meal.ingredient_three}}</li>
+            {% endif %}
+            
+            {% if meal.ingredient_four %}
+                <li>{{meal.ingredient_four}}</li>
+            {% endif %}
+            
+            {% if meal.ingredient_five %}
+                <li>{{meal.ingredient_five}}</li>
+            {% endif %}
+            
+            {% if meal.ingredient_six %}
+                <li>{{meal.ingredient_six}}</li>
+            {% endif %}
+        </ol>
+    </div>
+    <div class="col s12 m4">
+        <h5>Steps :</h5>
+        <ol>
+            {% if meal.step_one %}
+                <li>{{meal.step_one}}</li>
+            {% endif %}
+            
+            {% if meal.step_two %}
+                <li>{{meal.step_two}}</li>
+            {% endif %}
+            
+            {% if meal.step_three %}
+                <li>{{meal.step_three}}</li>
+            {% endif %}
+            
+            {% if meal.step_four %}
+                <li>{{meal.step_four}}</li>
+            {% endif %}
+            
+            {% if meal.step_five %}
+                <li>{{meal.step_five}}</li>
+            {% endif %}
+            
+            {% if meal.step_six %}
+                <li>{{meal.step_six}}</li>
+            {% endif %}
+        </ol>
+    </div>
+    <div class="col s12 m4">
+        <h6>Added by: </h6><h6 class="orange-text text-lighten-3">{{meal.author}}</h6>
+    </div>
+</div>
+{% endblock %}

@@ -44,7 +44,7 @@
                     <div class="card-image">
                         <img src="{{ meal.image }}">
                         <span class="card-title"><strong>{{ meal.dish_name }}</strong></span>
-                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">info_outline</i></a>
+                        <a href="{{url_for('recipe', meal_id=meal._id)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">info_outline</i></a>
                     </div>
                     <div class="card-content">
                         <p>{{ meal.short_describe }}</p>

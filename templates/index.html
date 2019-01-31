@@ -10,18 +10,18 @@
         <h1 class="header">Cooking Ideas</h1>
         <h3>Your nr 1 cooking ideas page</h3>
         <div class="carousel">
-            <a class="carousel-item" href="#one!"><img src="{{ url_for('static', filename='image/one.jpg') }}"></a>
-            <a class="carousel-item" href="#two!"><img src="{{ url_for('static', filename='image/two.jpg') }}"></a>
-            <a class="carousel-item" href="#three!"><img src="{{ url_for('static', filename='image/three.jpg') }}"></a>
-            <a class="carousel-item" href="#four!"><img src="{{ url_for('static', filename='image/four.jpg') }}"></a>
-            <a class="carousel-item" href="#five!"><img src="{{ url_for('static', filename='image/five.jpg') }}"></a>
-            <a class="carousel-item" href="#six!"><img src="{{ url_for('static', filename='image/six.jpg') }}"></a>
-            <a class="carousel-item" href="#seven!"><img src="{{ url_for('static', filename='image/seven.jpg') }}"></a>
-            <a class="carousel-item" href="#eight!"><img src="{{ url_for('static', filename='image/eight.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dessert')}}"><img src="{{ url_for('static', filename='image/one.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dinner')}}"><img src="{{ url_for('static', filename='image/two.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('breakfast')}}"><img src="{{ url_for('static', filename='image/three.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('breakfast')}}"><img src="{{ url_for('static', filename='image/four.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dinner')}}"><img src="{{ url_for('static', filename='image/five.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dinner')}}"><img src="{{ url_for('static', filename='image/six.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dinner')}}"><img src="{{ url_for('static', filename='image/seven.jpg') }}"></a>
+            <a class="carousel-item" href="{{url_for('dinner')}}"><img src="{{ url_for('static', filename='image/eight.jpg') }}"></a>
           </div>
         <p class="grey-text text-darken-3 lighten-3">Welcome to Cooking Ideas!<br>A place where You can find superb recipes for each part of a day.<br>
                                                     If you are happy with Your experience on site we highly recommend to put Your ideas here as well.<br>
-                                                    Simply <a href="{{url_for('login')}}">Login</a> or <a href="{{url_for('register')}}">Register</a> to place Your recipe.</p>
+                                                    Simply <a class="orange-text text-lighten-3" href="{{url_for('login')}}">Login</a> or <a class="orange-text text-lighten-3" href="{{url_for('register')}}">Register</a> to place Your recipe.</p>
     </div>
 </div>
 <div class="parallax-container">

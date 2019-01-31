@@ -10,8 +10,16 @@ nav {
     font-family: 'Monoton', cursive;
 }
 
-h1 {
+h1, h2, h5, h6 {
     font-family: 'Aclonica', sans-serif;
+}
+
+p {
+    font-family: 'Acme', sans-serif;
+}
+
+.description {
+    font-size: 1.5rem;
 }
 
 main {
@@ -34,6 +42,10 @@ span.card-title {
     background-color: #d68d057a;
     width: 100%;
     padding: 10px !important;
+}
+
+.card-content {
+    height: 100px;
 }
 
 /* Caption styles */
@@ -75,6 +87,15 @@ span.card-title {
     box-shadow: 0 1px 0 0 black;
 }
 
+.switch label {
+    color: black;
+}
+
+textarea.materialize-textarea {
+    border-bottom: 1px solid black;
+    box-shadow: 0 1px 0 0 black;
+}
+
 label.active {
     color: yellow !important;
 }
@@ -90,6 +111,11 @@ label.active {
 
 .title-image {
     text-align: center;
+}
+
+.flashes {
+    text-align: center;
+    font-size: 2rem;
 }
 
 /* MEDIA STYLE */

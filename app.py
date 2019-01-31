@@ -42,7 +42,7 @@ def login():
         if (request.form['pass']) == login_user['password']:
             session['username'] = request.form['username']
             return redirect(url_for('index'))
-        return 'Invalid username/password combination'
+        flash('Invalid username/password combination')
 
     return render_template('login.html')
 
@@ -58,7 +58,7 @@ def register():
             })
             session['username'] = request.form['username']
             return redirect(url_for('index'))
-        return "Username already exist"
+        flash("Username already exist! Try again!")
     return render_template('register.html')
     
 @app.route('/add_recipe')
@@ -77,6 +77,11 @@ def insert_recipe():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+    
+@app.route('/recipe/<meal_id>', methods=['GET', 'POST'])
+def recipe(meal_id):
+    the_meal =  mongo.db.meals.find_one({"_id": ObjectId(meal_id)})
+    return render_template('recipe.html', meal=the_meal)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
