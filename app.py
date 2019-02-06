@@ -6,7 +6,7 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.secret_key = "whatthefuck"
+app.secret_key = "verybigsecret"
 
 app.config["MONGO_DBNAME"] = 'cookbook'
 app.config["MONGO_URI"] = 'mongodb://admin:admin1@ds111425.mlab.com:11425/cookbook'
